@@ -5,6 +5,7 @@ import model.Atributos
 
 class Elfo : Raca{
 
+
     override val alinhamento = "Neutro"
     override val infravisao = 63
     override val movimento = 11

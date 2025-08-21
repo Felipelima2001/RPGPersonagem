@@ -8,15 +8,13 @@ class Anao : Raca {
     override val infravisao=60
     override val alinhamento= "SUPER LEAL"
 
-    override fun aplicarBonus(atributos: Atributos): Atributos {
-
-        val novosAtributos = atributos.copy(
+    override fun aplicarBonus(atributos: Atributos) =
+        atributos.copy(
             constituicao = atributos.constituicao + 2,
-            carisma = atributos.carisma - 2
         )
-        return novosAtributos
+
     }
-}
+
 
 
 

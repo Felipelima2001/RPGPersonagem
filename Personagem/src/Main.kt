@@ -1,14 +1,18 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-fun main() {
-    val name = "Kotlin"
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    println("Hello, " + name + "!")
+// Main.kt
+import personagem.Personagem
+import model.TiposDistribuicao
+import model.classes.*
+import model.racas.*
+import utils.DistribuicaoAtributos
 
-    for (i in 1..5) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        println("i = $i")
-    }
+fun main() {
+    val atributos = DistribuicaoAtributos.distribuir(TiposDistribuicao.Classica)
+    val personagem = Personagem("Aragorn", atributos, Humano(), Guerreiro())
+    personagem.mostrarFicha()
+
+    val personagem2 = Personagem("Gandalf", DistribuicaoAtributos.distribuir(TiposDistribuicao.Herioca), Elfo(), Mago())
+    personagem2.mostrarFicha()
+
+    val personagem3 = Personagem("Bilbo", DistribuicaoAtributos.distribuir(TiposDistribuicao.Aventureira), Anao(), Ladino())
+    personagem3.mostrarFicha()
 }
